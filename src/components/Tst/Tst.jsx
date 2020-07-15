@@ -1,18 +1,20 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import s from './Tst.module.css';
-import axios from 'axios';
 
-const Tst = () => {
-
+const Tst = (props) => {
+  debugger;
   let [apiCall,setApiCall] = useState("no answer");
 
-  axios.get('/api/tst').then((response) => {
-    setApiCall(response.data.message);
-  });
+  useEffect(()=>{
+    setApiCall(props.apiCall);
+  },[props.apiCall]);
 
   return (
     <div className={s.container}>
-      <div>Try call to API</div>
+      <div>
+        Try call to API
+        <button onClick={props.tstThunk}>Try</button>
+      </div>
       <div>{apiCall}</div>
     </div>
   );
