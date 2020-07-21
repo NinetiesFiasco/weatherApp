@@ -5,6 +5,8 @@ import Tst from './components/Tst/TstContainer';
 import Main from './components/Main/Main';
 import {Route} from 'react-router-dom';
 import Menu from './components/Menu/Menu';
+import Time from './components/Main/Time/Time';
+import Sort from './components/Main/Sort/SortContainer';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
       <main>
         <Route render={()=><Tst/>} path="/tst"/>
         <Route render={()=><Main/>} path="/main"/>
+        <Route render={()=><Time/>} path="/time"/>
+        <Route render={()=><Sort/>} path="/sort"/>
       </main>
     </div>
   );

@@ -1,10 +1,10 @@
 import {createStore,combineReducers,applyMiddleware} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 
-import tst from './tst';
+import arrayReducer from './arrayReducer';
 
 let reducers = combineReducers({
-  tst
+  arrayReducer
 });
 
 let store = createStore(reducers,applyMiddleware(thunkMiddleware));
