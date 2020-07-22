@@ -17,11 +17,23 @@ const Time = ({get,now}) => {
       <div>
         <button onClick={get} className="btn btn-primary">Запросить</button>
       </div>
-      { serverTime &&
-        <div className={s.time+" badge badge-success"}>Ответ: {timeFromDate(serverTime)} </div>
+      { serverTime &&        
+        <div>
+          <Badge text={"Время UTC: "+serverTime}/>
+          <Badge text={"Текущее время: " +timeFromDate(serverTime) }/>
+          <Badge text={"Смещение: " + (new Date()).getTimezoneOffset() + " минут"}/>
+        </div>
       }
     </div>
   );
 };
 
 export default Time;
+
+const Badge = ({text}) => {
+  return (
+    <div>
+      <div className={s.bage+" badge badge-success"}>{text}</div>
+    </div>
+  );
+};

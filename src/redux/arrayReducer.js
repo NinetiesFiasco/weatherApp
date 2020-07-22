@@ -64,9 +64,14 @@ export const clear = () => ({type: CLEAR});
 // Саночки
 export const sortArray = () => (dispatch,getState) => {
   const arr = getState().arrayReducer.array;
-  arrayAPI.sort(arr)
-    .then(response => {
-      if (response.status === 200)
-        dispatch(sortArraySuccess(response.data.sortedArray));
-    });
+  
+  arrayAPI.sort(arr).then((response)=>{     
+    if (response.status === 200)
+      dispatch(sortArraySuccess(response.data.sortedArray));
+  }).catch((error)=>{
+    alert(error.response.status);
+    alert(error.response.data);
+    
+  });
+    
 }

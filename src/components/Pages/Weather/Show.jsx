@@ -6,7 +6,7 @@ const Show = ({answer}) => {
   return (
   <div className={s.card+" card"}>
     <div className="card-title">
-      Город: {answer.name}
+      Город: {answer.name} 
     </div>
     <div className="card-subtitle text-muted">          
       Координаты: {answer.coord.lon + " " + answer.coord.lat}              

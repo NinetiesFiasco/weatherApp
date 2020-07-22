@@ -3,26 +3,12 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+const weatherAPIKey = "9d74f0b698218875eb5fecff78941eb6";
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/api/now', function (req, res) {
-  res.json({
-    success: 1,
-    message: "Messaga from server",
-    now: new Date()
-  });
-});
-
-app.post('/api/sort',(req,res)=>{
-  let array = req.body.array.sort((a,b)=>a-b);
-  res.json({
-    success:1,
-    message:"OK",
-    sortedArray:array
-  });
-});
+app.use('/api', require('./api/router.js'));
 
 if (process.env.NODE_ENV && process.env.NODE_ENV !== 'development') {
   app.use(express.static(__dirname+'/build'));

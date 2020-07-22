@@ -12,10 +12,11 @@ export const arrayAPI = {
   }
 }
 
-const weatherAPIKey = "9d74f0b698218875eb5fecff78941eb6";
-
-export const weatherAPI = {  
+export const weatherAPI = {
   query: (city) => {
-    return axios.get("http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+weatherAPIKey);
+    return axios.get("api/weather?city="+city);
+  },
+  test: (city) => {
+    return axios.get("api/weather/test?city="+city);
   }
 }

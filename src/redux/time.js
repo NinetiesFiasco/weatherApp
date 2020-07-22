@@ -35,7 +35,7 @@ export const getSuccess = (now) => ({type: GET_SUCCESS,now});
 // Запрос за временем 
 export const get = () => async (dispatch) => {  
   let response = await timeAPI.get();
-
+  
   if (response.status === 200)
     dispatch(getSuccess(response.data.now));
 }

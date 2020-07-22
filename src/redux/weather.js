@@ -11,7 +11,7 @@ const WEATHER_SUCCESS = prfx("WEATHER_SUCCESS");// Установка ответ
 // Стартовое состояние
 let initialState = {
   city: "",
-  weather: null,
+  answer: null
 };
 
 // Редюсер 
@@ -44,8 +44,14 @@ export const weatherSuccess = (answer) => ({type: WEATHER_SUCCESS,answer})
 // Запрос за погодой к сервису
 export const query = () => async (dispatch,getState) => {
   const city = getState().weather.city;
-  let response = await weatherAPI.query(city);
-    
-  if (response.status === 200)
-    dispatch(weatherSuccess(response.data));
+  let response;
+  try{
+    //response = await weatherAPI.query(city);
+    response = await weatherAPI.test(city);
+    if (response.status === 200)
+      dispatch(weatherSuccess(response.data.body));
+  } catch (error){
+    alert(error.response.status);
+    alert(error.response.data);
+  }
 }
