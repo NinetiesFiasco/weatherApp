@@ -1,0 +1,23 @@
+.tab{
+  border-collapse: collapse;
+  width: 750px;
+  margin: auto;
+}
+.tab td{
+  border: 1px solid black;
+  padding : 20px;
+}
+
+.adding button{
+  display: inline-block;
+  margin: 10px;
+}
+
+.vals{
+  width: 50%;
+}
+
+.val{
+  display: inline-block;
+  padding: 3px 7px;
+}

@@ -1,27 +1,23 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header/Header';
-import Tst from './components/Tst/TstContainer';
-import Main from './components/Main/Main';
 import {Route} from 'react-router-dom';
-import Menu from './components/Menu/Menu';
-import Time from './components/Main/Time/Time';
-import Sort from './components/Main/Sort/SortContainer';
+import Main from './components/Pages/Main/Main';
+import Time from './components/Pages/Time/TimeContainer';
+import Sort from './components/Pages/Sort/SortContainer';
+import Weather from './components/Pages/Weather/WeatherContainer';
 
 function App() {
   return (
     <div className="App">
       <header>
         <Header />
-      </header>
-      <nav>
-        <Menu />
-      </nav>
-      <main>
-        <Route render={()=><Tst/>} path="/tst"/>
+      </header>      
+      <main className="container-lg">
         <Route render={()=><Main/>} path="/main"/>
         <Route render={()=><Time/>} path="/time"/>
         <Route render={()=><Sort/>} path="/sort"/>
+        <Route render={()=><Weather/>} path="/weather"/>
       </main>
     </div>
   );

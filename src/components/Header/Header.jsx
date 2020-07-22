@@ -1,8 +1,8 @@
 import React from 'react';
-import s from './Header.module.css';
+import Menu from './Menu/Menu';
 
 const Header = () => {
-  return <h1 className={s.header}>My fullstack app</h1>;
+  return <Menu/>;
 };
 
 export default Header;
