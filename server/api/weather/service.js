@@ -6,7 +6,7 @@ const weather = (city,callBack) => {
   request("http://api.openweathermap.org/data/2.5/weather?q="+encodeURI(city)+"&appid="+weatherAPIKey,(error,response,body)=>{
       
       if(response.statusCode === 200){
-        callBack(null,body);
+        callBack(null,JSON.parse(body));
       } else {
         callBack("Weather error");
       }
