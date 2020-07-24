@@ -1,9 +1,11 @@
 import React from 'react';
 import s from './Show.module.css';
-import { windDirrection,formatTemp } from '../../../utils/utils';
-import {button} from '../../Common/Forms/Forms';
+import { windDirrection,formatTemp } from '../../../../utils/utils';
+import {button} from '../../../Common/Forms/Forms';
 
 const Show = ({answer,setFavorit,addInList}) => {
+  if (!answer)
+    return null;
   return (
   <div className={s.card+" card"}>
     <div className="card-title">

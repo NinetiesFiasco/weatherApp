@@ -5,7 +5,7 @@ import {Route} from 'react-router-dom';
 import Main from './components/Pages/Main/Main';
 import Time from './components/Pages/Time/TimeContainer';
 import Sort from './components/Pages/Sort/SortContainer';
-import Weather from './components/Pages/Weather/WeatherContainer';
+import Weather from './components/Pages/Weather/Weather';
 
 function App() {
   return (

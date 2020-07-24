@@ -1,40 +1,23 @@
 import React from 'react';
-import Show from './Show';
+import Show from './Show/ShowContainer';
 import Title from '../../Common/Title/Title';
-import { textInput, button } from '../../Common/Forms/Forms';
-import s from './Weather.module.css'
+import Search from './Search/SearchContainer'
+import FavoritCity from './FavoritCity/FavoritCityContainer';
+import FastCityList from './FastCityList/FastCityListContainer';
 
-const answer = ({city,answer,query,updateCity,setFavorit,favoritCity,removeFavorit,addInList,removeFromList,cityList}) => {
-
-  const locUpdateCity = (e) => {
-    updateCity(e.target.value);
-  }
-  
-  const cityListUI = cityList.map( (city, key) => <div key={key}>{ city }</div> )
+const Weather = () => {
  
   return (
     <div>
       <Title text="Погода"/>
       <div>
-        <b>Город: </b>
-        {textInput(locUpdateCity,city)}
-        <br/>
-        {button(query,"primary","Запрос")}
-        <div>
-          <b>Избранный город: </b>{favoritCity}
-          { favoritCity &&
-            <div>
-              {button(removeFavorit,"warning","Удалить")}
-            </div>
-          }
-        </div>
+        <Search />
+        <FavoritCity />
       </div>
-      { answer && <Show answer={answer} setFavorit={setFavorit} removeFavorit={removeFavorit} addInList={addInList}/>}
-      <div className={s.cityList}>
-        { cityListUI }
-      </div>
+      <Show />
+      <FastCityList/>
     </div>
   );
 };
 
-export default answer;
+export default Weather;

@@ -4,11 +4,15 @@ import thunkMiddleware from 'redux-thunk';
 import arrayReducer from './arrayReducer';
 import weather from './weather';
 import time from './time';
+import cities from './cities';
+import favorite from './favorite';
 
 let reducers = combineReducers({
   arrayReducer,
   weather,
-  time
+  time,
+  cities,
+  favorite
 });
 
 
