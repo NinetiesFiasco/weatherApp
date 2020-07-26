@@ -23,12 +23,8 @@ app.get('/',(req,res)=>{
 
 if(!module.parent){
   app.listen(5000, () =>
-    console.log(`Example app listening on port ${5000}!`),
+    console.log(`Weather app listening on port ${5000}!`),
   );
 }
-/*
-app.listen(5000, function () {
-  console.log('Example app listening on port 5000!');
-});
-*/
+
 module.exports.app = app;
