@@ -1,3 +1,11 @@
+# Приложение прогноз погоды
+
+## Установка
+
+Скачать: `git clone https://github.com/NinetiesFiasco/weatherApp`
+
+Установить: `yarn install` или `npm i`
+
 ## Скрипты для режима development
 
 ### `npm run start-server`
@@ -21,3 +29,7 @@
 ### `npm run prod`
 
 Запускает сервер в режиме production 
+
+## Глобальные зависимости
+
+### nodejs nodemon
