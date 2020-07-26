@@ -12,21 +12,24 @@
     "classnames": "^2.2.6",
     "cross-env": "^7.0.2",
     "express": "^4.17.1",
+    "mocha": "^8.0.1",
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dnd": "^11.1.3",
     "react-dnd-html5-backend": "^11.1.3",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "supertest": "^4.0.2"
   },
   "scripts": {
     "build": "node ./buildScript",
     "prod": "cross-env NODE_ENV=production node server/server.js",
     "start-server": "cross-env NODE_ENV=development nodemon server/server.js --watch server/*",
+    "test-server": "mocha server/*.test.js --watch",
     "start-front": "react-scripts start",
     "build-front": "react-scripts build",
-    "test": "react-scripts test",
+    "test-front": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

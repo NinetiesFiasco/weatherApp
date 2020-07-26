@@ -17,6 +17,18 @@ if (process.env.NODE_ENV && process.env.NODE_ENV !== 'development') {
   });
 }
 
+app.get('/',(req,res)=>{
+  res.send("Hello Test")
+})
+
+if(!module.parent){
+  app.listen(5000, () =>
+    console.log(`Example app listening on port ${5000}!`),
+  );
+}
+/*
 app.listen(5000, function () {
   console.log('Example app listening on port 5000!');
 });
+*/
+module.exports.app = app;

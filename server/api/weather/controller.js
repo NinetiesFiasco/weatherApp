@@ -17,7 +17,7 @@ const weatherByCity = (req,res) => {
         });
       else
         res.json({
-          succcess:1,
+          success:1,
           message: "OK",
           body: result
         });
