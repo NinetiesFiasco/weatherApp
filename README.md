@@ -2,7 +2,11 @@
 
 ## Установка
 
+В выбранной дирректории запустить скрпипты:
+
 Скачать: `git clone https://github.com/NinetiesFiasco/weatherApp`
+
+Перейти в папку программы: `cd weatherApp`
 
 Установить: `yarn install` или `npm i`
 
@@ -32,4 +36,4 @@
 
 ## Глобальные зависимости
 
-### nodejs nodemon
+### nodejs nodemon git
